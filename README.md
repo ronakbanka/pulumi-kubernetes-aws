@@ -4,8 +4,8 @@ This Sample Project showcases how to use Pulumi Component Resource model to comb
 
 This Project contains 2 Directories:
 
-1. Kubernetes-cluster: Component Resource to combine AWS VPC and AWS EKS calls.
-2. Application: Code to create AWS ECR repository, create Docker image from src code & deploy application to previously provisined EKS cluster.
+1. **Kubernetes-cluster**: Component Resource to combine AWS VPC and AWS EKS calls.
+2. **Application**: Code to create AWS ECR repository, create Docker image from src code & deploy application to previously provisined EKS cluster.
 
 ```
 .

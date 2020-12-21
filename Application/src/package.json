@@ -1,0 +1,10 @@
+{
+  "name": "web_app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "server.js",
+  "dependencies": {
+    "@pulumi/pulumi": "^2.15.6",
+    "express": "latest"
+  }
+}
