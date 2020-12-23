@@ -48,8 +48,7 @@ export class EksCluster extends pulumi.ComponentResource {
             privateSubnetIds: vpc.privateSubnetIds,
             publicSubnetIds: vpc.publicSubnetIds,
             instanceType: "t2.medium",
-            desiredCapacity: 2,
-            // createOidcProvider: true,
+            desiredCapacity: 2
         }, { parent: this });
 
         this.kubeconfig = cluster.kubeconfig;
