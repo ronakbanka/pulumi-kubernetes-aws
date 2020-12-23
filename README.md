@@ -35,11 +35,12 @@ This Project contains 2 Directories:
 
 1. Initialize Pulumi Stack
 ```
+$ cd kubenetes-cluster
 $ pulumi stack init dev
 ```
 2. Install node dependencies
 ```
-$ cd kubenetes-cluster && npm install
+$ npm install
 ```
 3. Set AWS region to deploy EKS
 ```
@@ -55,4 +56,29 @@ $ pulumi stack output kubeconfig >kubeconfig.json
 $ KUBECONFIG=./kubeconfig.json kubectl get nodes
 ```
 ---
+
+## Deploy Node Application
+
+1. Initialize Pulumi Stack
+```
+$ cd Application
+$ pulumi stack init dev
+```
+2. Install node dependencies
+```
+$ npm install
+```
+3. Set AWS region to create ECR registry & Random value to print on App
+```
+$ pulumi config set aws:region us-east-1
+$ pulumi config set value ronak
+```
+4. Deploy Application
+```
+$ pulumi up
+```
+5. Once the CLuster is Deployed, you can curl the Applicaion.
+```
+$ curl $(pulumi stack output url)
+```
 
