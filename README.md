@@ -71,7 +71,7 @@ $ npm install
 3. Set AWS region to create ECR registry & Random value to print on App
 ```
 $ pulumi config set aws:region us-east-1
-$ pulumi config set value ronak
+$ pulumi config set app_value ronak
 ```
 4. Deploy Application
 ```

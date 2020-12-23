@@ -4,8 +4,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as awsx from "@pulumi/awsx";
 import * as aws from "@pulumi/aws";
 
+// Fetch the kubeconfig from EKS cluster using Stack Reference
 const cluster = new pulumi.StackReference("rbanka/kubernetes-cluster/dev");
-
 const kubeconfig = cluster.getOutput("kubeconfig")
 
 // Create a k8s provider.
@@ -13,9 +13,11 @@ const provider = new k8s.Provider("provider", {
     kubeconfig: kubeconfig,
 });
 
+// Fetch the value from Pulumi config to be used as env variable in application
 const config = new pulumi.Config();
 const app_value = config.require("app_value") || "abc123"
 
+// K8s application deployment
 const appName = "hello-world-app";
 const appLabels = { appClass: appName };
 const deployment = new k8s.apps.v1.Deployment(`${appName}-dep`, {

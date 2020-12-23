@@ -60,5 +60,3 @@ export class EksCluster extends pulumi.ComponentResource {
         });
     }
 }
-
-// module.exports.EksCluster = EksCluster;
