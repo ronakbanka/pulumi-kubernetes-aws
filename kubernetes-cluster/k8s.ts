@@ -14,7 +14,7 @@ export class EksCluster extends pulumi.ComponentResource {
         const clusterName = `${name}-cluster`
         const Tag = `kubernetes.io/cluster/${clusterName}`
 
-        super("pulumi:k8s:ekscluster", clusterName, opts);
+        super("rbanka:k8s:ekscluster", clusterName, opts);
 
         // Creating AWS network resources
         let vpc = new awsx.ec2.Vpc(`${clusterName}-vpc`, {
@@ -49,7 +49,6 @@ export class EksCluster extends pulumi.ComponentResource {
             publicSubnetIds: vpc.publicSubnetIds,
             instanceType: "t2.medium",
             desiredCapacity: 2,
-            // createOidcProvider: true,
         }, { parent: this });
 
         this.kubeconfig = cluster.kubeconfig;
