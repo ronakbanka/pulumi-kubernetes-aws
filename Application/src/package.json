@@ -4,7 +4,7 @@
   "description": "Node.js on Docker",
   "main": "server.js",
   "dependencies": {
-    "@pulumi/pulumi": "^2.15.6",
+    "@pulumi/pulumi": "^2.21.0",
     "express": "latest"
   }
 }
