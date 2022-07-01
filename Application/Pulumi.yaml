@@ -1,0 +1,3 @@
+name: pulumi-kubernetes-aws
+description: Sample Resource Code
+runtime: nodejs

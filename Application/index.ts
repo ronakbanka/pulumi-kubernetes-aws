@@ -5,7 +5,7 @@ import * as awsx from "@pulumi/awsx";
 import * as aws from "@pulumi/aws";
 
 // Fetch the kubeconfig from EKS cluster using Stack Reference
-const cluster = new pulumi.StackReference("rbanka/kubernetes-cluster/dev");
+const cluster = new pulumi.StackReference("rbanka/pulumi-kubernetes-aws/dev");
 const kubeconfig = cluster.getOutput("kubeconfig")
 
 // Create a k8s provider.
