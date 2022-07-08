@@ -40,7 +40,10 @@ const deployment = new k8s.apps.v1.Deployment(`${appName}-dep`, {
 }, { provider: provider });
 
 const service = new k8s.core.v1.Service(`${appName}-svc`, {
-    metadata: { labels: appLabels },
+    metadata: { 
+        name: `${appName}-svc`,
+        labels: appLabels,
+    },
     spec: {
         type: "LoadBalancer",
         ports: [{ port: 80, targetPort: "http" }],
