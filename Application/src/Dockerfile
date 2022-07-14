@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:current-buster-slim
+FROM --platform=linux/amd64 node:18.5-bullseye-slim
 
 WORKDIR /app
 
